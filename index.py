@@ -29,3 +29,13 @@ def form_sentence(tweet):
 
 print(form_sentence(train_tweets['tweet'].iloc[10]))
 print(train_tweets['tweet'].iloc[10])
+
+#Removing Stopwords
+def no_user_alpha(tweet):
+    tweet_list = [ele for ele in tweet.split() if ele != 'user']
+    clean_tokens = [t for t in tweet_list if re.match(r'[^\W\d]*$', t)]
+    clean_s = ' '.join(clean_tokens)
+    clean_mess = [word for word in clean_s.split() if word.lower() not in stopwords.words('english')]
+    return clean_mess
+print(no_user_alpha(form_sentence(train_tweets['tweet'].iloc[10])))
+print(train_tweets['tweet'].iloc[10])
