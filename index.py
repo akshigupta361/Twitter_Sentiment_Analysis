@@ -15,3 +15,8 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import confusion_matrix, classification_report,accuracy_score
+
+#Reading dataset
+train_tweets = pd.read_csv('twitter_train.csv')
+test_tweets = pd.read_csv('twitter_test.csv')
+
