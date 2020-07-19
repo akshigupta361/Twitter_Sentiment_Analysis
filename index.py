@@ -39,3 +39,15 @@ def no_user_alpha(tweet):
     return clean_mess
 print(no_user_alpha(form_sentence(train_tweets['tweet'].iloc[10])))
 print(train_tweets['tweet'].iloc[10])
+
+#Normalization
+def normalization(tweet_list):
+        lem = WordNetLemmatizer()
+        normalized_tweet = []
+        for word in tweet_list:
+            normalized_text = lem.lemmatize(word,'v')
+            normalized_tweet.append(normalized_text)
+        return normalized_tweet
+    
+tweet_list = 'I was playing with my friends with whom I used to play, when you called me yesterday'.split()
+print(normalization(tweet_list))
